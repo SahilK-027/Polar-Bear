@@ -100,12 +100,12 @@ const gltfLoader = new GLTFLoader(loadingManager);
 gltfLoader.setDRACOLoader(dracoLoader);
 
 const rgbeLoader = new RGBELoader(loadingManager);
-rgbeLoader.load("./map.hdr", (environmentMap) => {
+rgbeLoader.load("https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/snowy_hillside_2k.hdr", (environmentMap) => {
   environmentMap.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment = environmentMap;
 
   const skybox = new GroundedSkybox(environmentMap, 15, 70);
-  skybox.position.y = 11;
+  skybox.position.y = 7;
   scene.add(skybox);
 });
 
