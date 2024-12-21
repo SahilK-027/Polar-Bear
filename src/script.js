@@ -7,6 +7,7 @@ import particlesVertexShader from "./shaders/particles/vertex.glsl";
 import particlesFragmentShader from "./shaders/particles/fragment.glsl";
 import gpgpuParticlesFragmentShader from "./shaders/gpgpu/particles-frag.glsl";
 import music from "./audio/bg.mp3";
+
 import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
 import { GroundedSkybox } from "three/addons/objects/GroundedSkybox.js";
 import snowVertexShader from "./shaders/snow/vertex.glsl";
@@ -99,7 +100,7 @@ const gltfLoader = new GLTFLoader(loadingManager);
 gltfLoader.setDRACOLoader(dracoLoader);
 
 const rgbeLoader = new RGBELoader(loadingManager);
-rgbeLoader.load("./environmentMaps/1/map.hdr", (environmentMap) => {
+rgbeLoader.load("./map.hdr", (environmentMap) => {
   environmentMap.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment = environmentMap;
 
